@@ -5,10 +5,11 @@ describe("'+' button is functional and adds a single track to the 'Your Playlist
     cy.visit("https://vite-react-alpha-lemon.vercel.app/");
     cy.get("#tracklist .MuiGrid-container").then(($containers) => {
       const randomIndex = getRandomNumber($containers.length);
-      cy.wrap($containers[randomIndex]).as("randomContainer");
+      const randomContainer = $containers[randomIndex]
+      cy.wrap(randomContainer).as("randomContainer");
 
-      cy.get("@randomContainer").find("button").as("randomButton");
-      cy.get("@randomContainer")
+      cy.wrap(randomContainer).find("button").as("randomButton");
+      cy.wrap(randomContainer)
         .find(".MuiGrid-item.MuiGrid-grid-xs-4 p")
         .invoke("text")
         .as("randomTrackName");
