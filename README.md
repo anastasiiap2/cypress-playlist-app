@@ -21,7 +21,7 @@ This test suite uses Cypress for end-to-end testing of the Playlist App
 
 1. Clone the repository:
 
-   `git clone [https://github.com/yourusername/playlist-app-tests.git](https://github.com/anastasiiap2/cypress-playlist-app.git)`
+   `git clone https://github.com/anastasiiap2/cypress-playlist-app.git`
 
 2. Install dependencies:
 
