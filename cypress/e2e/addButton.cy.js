@@ -7,14 +7,16 @@ describe("'+' button is functional and adds a single track to the 'Your Playlist
       const randomIndex = getRandomNumber($containers.length);
       const randomContainer = $containers[randomIndex]
       cy.wrap(randomContainer).as("randomContainer");
+    });
 
-      cy.wrap(randomContainer).find("button").as("randomButton");
-      cy.wrap(randomContainer)
+      cy.get("@randomContainer").find("button").as("randomButton");
+      cy.get("@randomContainer")
         .find(".MuiGrid-item.MuiGrid-grid-xs-4 p")
         .invoke("text")
         .as("randomTrackName");
     });
-  });
+  
+ 
 
   it("Button is clickable", () => {
     cy.get("@randomButton").click();
